@@ -44,6 +44,10 @@ namespace Structure
 
             string test = "Hello";
 
+            var a = 5;
+            var b = 10;
+            var c = a + b;
+
             return Result.Succeeded;
         }
     }
