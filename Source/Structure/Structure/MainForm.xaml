@@ -1,0 +1,275 @@
+﻿<Window x:Class="Structure.MainForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Structure"
+             mc:Ignorable="d" 
+             Height="500" 
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Put Rebar On Column">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style\Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="220"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <GroupBox Header="Setting"
+                FontSize="14"
+                FontWeight="Bold"
+                Margin="3"
+                BorderThickness="1"
+                BorderBrush="Black">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            Content="a:"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="spacing:"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <TextBox
+                            x:Name="txt_DistanceConcreteProtect"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="14"
+                            Style="{DynamicResource MyTextBox}"
+                            FontWeight="Normal"
+                            Margin="5,5,0,5"
+                            Text="20" SelectionChanged="txt_DistanceConcreteProtect_SelectionChanged" />
+                        <TextBox
+                            x:Name="txt_Spacing"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="14"
+                            Style="{DynamicResource MyTextBox}"
+                            FontWeight="Normal"
+                            Margin="5,5,0,5"
+                            Text="150" SelectionChanged="txt_Spacing_SelectionChanged"/>
+
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <GroupBox Header="Rebar Main Setting"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Margin="3"
+                    BorderThickness="1"
+                    BorderBrush="Black">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            Content="Type:"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <ComboBox
+                            x:Name="cb_RebarMainType"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,6,0,6" SelectionChanged="cb_RebarMainType_SelectionChanged" />
+                    </Grid>
+                   
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Row="2">
+                <GroupBox Header="Rebar Branch Setting"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Margin="3"
+                    BorderThickness="1"
+                    BorderBrush="Black">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            Content="Style:"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="Tyle:"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="Start Hook:"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="End Hook:"
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="Start Ori:"
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <Label 
+                            Content="End Ori:"
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            FontSize="14"
+                            Style="{DynamicResource MyLabel1}"
+                            VerticalAlignment="Center"
+                            FontWeight="Normal"
+                            Margin="0,0,0,0"/>
+                        <ComboBox
+                            x:Name="cb_RebarBranchStyle"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchStyle_SelectionChanged" />
+                        <ComboBox
+                            x:Name="cb_RebarBranchTyle"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchTyle_SelectionChanged" />
+                        <ComboBox
+                            x:Name="cb_RebarBranchStartHook"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchStartHook_SelectionChanged" />
+                        <ComboBox
+                            x:Name="cb_RebarBranchEndHook"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchEndHook_SelectionChanged" />
+                        <ComboBox
+                            x:Name="cb_RebarBranchStartOri"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchStartOri_SelectionChanged" />
+                        <ComboBox
+                            x:Name="cb_RebarBranchEndOri"
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Style="{DynamicResource MyComboBox}"
+                            FontSize="14"
+                            FontWeight="Normal"
+                            Margin="5,3,0,3" SelectionChanged="cb_RebarBranchEndOri_SelectionChanged" />
+
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image
+                Grid.Row="0"/>
+            <Button
+                x:Name="btn_Run"
+                Grid.Row="1"
+                Content="Run"
+                Style="{DynamicResource MyButton}"
+                Width="55"
+                Margin="0,10,70,10"
+                FontSize="14"
+                HorizontalAlignment="Right" Click="btn_Run_Click"/>
+            <Button
+                x:Name="btn_Cancel"
+                Grid.Row="1"
+                Content="Cancel"
+                Style="{DynamicResource MyButton}"
+                Width="55"
+                Margin="0,10,5,10"
+                FontSize="14"
+                HorizontalAlignment="Right" />
+            
+        </Grid>
+    </Grid>
+</Window>
