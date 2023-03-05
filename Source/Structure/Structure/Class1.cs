@@ -42,6 +42,8 @@ namespace Structure
 
             #endregion
 
+            string test = "Hello";
+
             return Result.Succeeded;
         }
     }
